@@ -1,9 +1,10 @@
 <?php
 //define('ROOT', '/var/www/tp1.fr');
-define('ROOT',dirname(dirname(__FILE__)));
-require_once(ROOT.'/bootstrap.php');
-
-require_once(APPROOT.'libraries/Core.php');
+define('ROOT', dirname(dirname(__FILE__)));
+require_once(ROOT . '/bootstrap.php');
+require_once(APPROOT . 'libraries/Controller.php');
+require_once(APPROOT . 'libraries/Database.php');
+require_once(APPROOT . 'libraries/Core.php');
 $init = new Core();
 
 // On sépare les paramètres et on les met dans le tableau $params
@@ -18,20 +19,20 @@ $init = new Core();
 //     // On sauvegarde le 2ème paramètre dans $action si il existe, sinon index
 //     $action = isset($params[1]) ? $params[1] : 'index';
 
-    
+
 //     // On appelle le contrôleur
 //     if (!file_exists(APPROOT.'controller/'.$controller.'.php')){
 //         http_response_code(404);
 //         echo "La page recherchée n'existe pas";;
 //     }
 //     else{
-        
+
 //         require_once(APPROOT.'controller/'.$controller.'.php');
 
-        
+
 //         // On instancie le contrôleur
 //         $controller = new $controller();
-                
+
 //         if(method_exists($controller, $action)){
 //             // On supprime les 2 premiers paramètres
 //             unset($params[0]);
