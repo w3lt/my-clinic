@@ -1,15 +1,17 @@
 <?php
 
-class Database {
-    private $db = "TP1";
+class Database
+{
+    private $db = "TP";
     private $host = "localhost";
-    private $username = "john";
-    private $password = "apple";
+    private $username = "root";
+    private $password = "qwerty";
     public $_connection;
     public $table;
     private $query;
-    
-    public function getConnection() {
+
+    public function getConnection()
+    {
         $this->_connection = null;
         try {
             $this->_connection = new PDO(
@@ -22,26 +24,31 @@ class Database {
         }
     }
 
-    public function query($sql) {
+    public function query($sql)
+    {
         $this->query = $this->_connection->prepare($sql);
     }
-    
-    public function execute() {
+
+    public function execute()
+    {
         $this->query->execute();
     }
 
-    public function single() {
+    public function single()
+    {
         $this->query->execute();
         return $this->query->fetch();
-    }     
-          
-    public function rowCount() {
+    }
+
+    public function rowCount()
+    {
         return count($this->resultSet());
     }
-    public function resultSet() {
+    public function resultSet()
+    {
         $this->query->execute();
         return $this->query->fetchAll();
     }
-}   
+}
 
 ?>

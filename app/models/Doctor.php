@@ -6,7 +6,7 @@ class Doctor {
     private $db;
     private $table;
     public function __construct() {
-        $this->table = "Doctor";
+        $this->table = "doctor";
         $this->db = new Database();
         $this->db->getConnection();
     }
