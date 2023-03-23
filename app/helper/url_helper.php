@@ -1,6 +1,6 @@
 <?php
 function redirect($page)
 {
-    header('location:' . APPROOT . $page);
+    header('location:index.php?url=' . $page);
 }
 ?>
