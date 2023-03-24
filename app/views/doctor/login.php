@@ -26,7 +26,9 @@
   </form>
   </div>
   <script src="public/js/index.js"></script>
+  <footer>Not having an account ? Sign up <a href='index.php?url=doctors/register'>here</a></footer>
 </body>
+
 
 </html>
 <?php require_once(APPROOT . 'views/inc/footer.php'); ?>

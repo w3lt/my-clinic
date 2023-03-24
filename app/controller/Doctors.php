@@ -30,13 +30,25 @@ class Doctors extends Controller
             }
             $this->createDoctorSession(compact('result'));
         } else {
-            $this->render("/doctor/login", $data = ["Hello", "I am superhero"]);
+            $this->render("/doctor/login", $data = []);
         }
     }
 
     public function register()
     {
-        echo "Signing......";
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $registerInfo = [
+                "name" => $_POST['name'],
+                "email" => $_POST['email'],
+                "password" => password_hash($_POST['password'], PASSWORD_DEFAULT),
+                "gender" => $_POST['gender'] == 'male',
+                "specialist" => $_POST['specialist']
+            ];
+            var_dump($registerInfo);
+            echo "Signing......";
+        } else {
+            $this->render("/doctor/register", $data = []);
+        }
     }
 
     function createDoctorSession($doctor)
