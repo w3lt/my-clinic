@@ -5,6 +5,8 @@ class Pages extends Controller
     {
         if (!isLoggedIn()) {
             redirect('doctors/login');
+        } else {
+            echo "Login success, redirecting......";
         }
     }
 }

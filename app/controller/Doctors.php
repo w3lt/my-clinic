@@ -15,18 +15,22 @@ class Doctors extends Controller
                 "password_error" => false
             ];
             $email = $loginInfo['email'];
-            if (!$this->model->findDoctorbyEmail($email)) {
+            if ($this->model->findDoctorbyEmail($email)) {
+                $password = $loginInfo['password'];
+                if ($this->model->login($email, $password)) {
+                    $result = $this->model->login($email, $password);
+                    $this->createDoctorSession(compact('result'));
+                } else {
+                    echo "Wrong password, try again";
+                    $loginInfo['password_error'] = true;
+                    $this->render("/doctor/login", $data = []);
+                }
+            } else {
                 echo "Wrong email or user not exists";
                 $loginInfo['email_error'] = true;
-                $this->render("/doctors/login", $data = []);
+                $this->render("/doctor/login", $data = []);
             }
-            $password = $loginInfo(['password']);
-            $result = $this->model->login($email, $password);
-            if (!$result) {
-                $loginInfo['password_error'] = true;
-                $this->render("/doctors/login", $data = []);
-            }
-            $this->createDoctorSession(compact('result'));
+
         } else {
             $this->render("/doctor/login", $data = []);
         }
@@ -44,6 +48,7 @@ class Doctors extends Controller
             ];
             echo "Signing up......";
             $this->model->create($accountInfo);
+            redirect('doctors/login');
         } else {
             $this->render("/doctor/register", $data = []);
         }
@@ -54,7 +59,7 @@ class Doctors extends Controller
         $_SESSION['doctor_id'] = $doctor['id'];
         $_SESSION['doctor_name'] = $doctor['name'];
         $_SESSION['doctor_email'] = $doctor['email'];
-        //$this->render("")
+        redirect('pages/index');
     }
 }
 ?>

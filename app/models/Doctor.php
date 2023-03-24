@@ -28,9 +28,11 @@ class Doctor
 
     public function login($email, $password)
     {
-        $sql = "SELECT * FROM " . $this->table . " WHERE email ='" . $email . "' and password ='" . $password . "'";
-        $this->db->query($sql);
-        return $this->db->single();
+        $data = $this->findDoctorbyEmail($email);
+        $hash = $data['password'];
+        if (password_verify($password, $hash))
+            return $data;
+        return [];
     }
     public function findDoctorbyEmail($email)
     {
