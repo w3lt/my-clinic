@@ -13,32 +13,32 @@
     <h1>Register</h1>
     <p id="waiting"></p>
     <div class="divider"></div>
-    <form action="/index.php?url=doctors/register" method="post" onsubmit="validationForm()">
+    <form action="/index.php?url=doctors/register" method="post">
         <label for="input-name">Your name</label>
         <br />
-        <input id="input-name" name="name" value="" />
+        <input id="input-name" name="name" value="" required="required" />
         <p id="validationEmailResponse"></p>
         <label for="input-email">Email register</label>
         <br />
-        <input id="input-email" name="email" type="email" value="" />
+        <input id="input-email" name="email" type="email" value="" required="required" />
         <p id="validationEmailResponse"></p>
         <label for="input-password">Password</label>
         <br />
-        <input id="input-password" name="password" type="password" value="" />
+        <input id="input-password" name="password" type="password" value="" required="required" />
         <p id="validationPasswordResponse"></p>
         <label for="gender">Gender :</label>
-        <input type="radio" class="gender" name="gender" value="male">
+        <input type="radio" class="gender" name="gender" value="male" required="required">
         <label for="male">HTML</label>
         <input type="radio" class="gender" name="gender" value="female">
         <label for="female">CSS</label>
         <br />
         <label for="specialist">Speciality :</label>
-        <input type="radio" id="heart" name="specialist" value="heart">
+        <input type="radio" id="heart" name="specialist" value="heart" required="required">
         <label for="heart">Heart</label>
         <input type="radio" id="neuron" name="specialist" value="neuron">
         <label for="neuron">Neuron</label>
         <input type="radio" id="skeleton" name="specialist" value="skeleton">
-        <label for="skeleton">Neuron</label>
+        <label for="skeleton">Skeleton</label>
         <br />
         <input id="submit-btn" type="submit" value="Register" />
     </form>

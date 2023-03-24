@@ -18,15 +18,13 @@ class Doctors extends Controller
             if (!$this->model->findDoctorbyEmail($email)) {
                 echo "Wrong email or user not exists";
                 $loginInfo['email_error'] = true;
-                $this->render("/doctors/login");
-                return;
+                $this->render("/doctors/login", $data = []);
             }
             $password = $loginInfo(['password']);
             $result = $this->model->login($email, $password);
             if (!$result) {
                 $loginInfo['password_error'] = true;
-                $this->render("/doctors/login");
-                return;
+                $this->render("/doctors/login", $data = []);
             }
             $this->createDoctorSession(compact('result'));
         } else {
@@ -37,15 +35,15 @@ class Doctors extends Controller
     public function register()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $registerInfo = [
+            $accountInfo = [
                 "name" => $_POST['name'],
                 "email" => $_POST['email'],
                 "password" => password_hash($_POST['password'], PASSWORD_DEFAULT),
                 "gender" => $_POST['gender'] == 'male',
                 "specialist" => $_POST['specialist']
             ];
-            var_dump($registerInfo);
-            echo "Signing......";
+            echo "Signing up......";
+            $this->model->create($accountInfo);
         } else {
             $this->render("/doctor/register", $data = []);
         }
