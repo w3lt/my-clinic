@@ -30,7 +30,6 @@ class Doctor
     {
         $sql = "SELECT * FROM " . $this->table . " WHERE email ='" . $email . "' and password ='" . $password . "'";
         $this->db->query($sql);
-        var_dump($query);
         return $this->db->single();
     }
     public function findDoctorbyEmail($email)
