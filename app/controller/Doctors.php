@@ -19,7 +19,7 @@ class Doctors extends Controller
                 $password = $loginInfo['password'];
                 if ($this->model->login($email, $password)) {
                     $result = $this->model->login($email, $password);
-                    $this->createDoctorSession(compact('result'));
+                    $this->createDoctorSession(compact('result')['result']);
                 } else {
                     echo "Wrong password, try again";
                     $loginInfo['password_error'] = true;
