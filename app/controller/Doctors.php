@@ -34,6 +34,11 @@ class Doctors extends Controller
         }
     }
 
+    public function register()
+    {
+        echo "Signing......";
+    }
+
     function createDoctorSession($doctor)
     {
         $_SESSION['doctor_id'] = $doctor['id'];
