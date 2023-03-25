@@ -1,4 +1,3 @@
-<?php require_once(APPROOT . 'views/inc/header.php'); ?>
 <!DOCTYPE html>
 <html>
 
@@ -31,4 +30,3 @@
 
 
 </html>
-<?php require_once(APPROOT . 'views/inc/footer.php'); ?>
