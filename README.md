@@ -30,3 +30,7 @@ specialist enum('heart','neuron','skeleton'),
 gender bool,
 create_at date
 );
+
+# TO Login
+
+First create an account with Register
