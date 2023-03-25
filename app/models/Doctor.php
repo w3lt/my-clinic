@@ -17,8 +17,7 @@ class Doctor
             $this->db->query($sql);
             $this->db->execute();
             $this->id = $this->db->_connection->lastInsertId();
-            echo $this->id;
-            echo "\n";
+            //echo $this->id;
             return true;
         } catch (Exception $exception) {
             return false;

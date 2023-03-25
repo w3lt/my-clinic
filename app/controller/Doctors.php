@@ -47,8 +47,9 @@ class Doctors extends Controller
                 "specialist" => $_POST['specialist']
             ];
             echo "Signing up......";
-            $this->model->create($accountInfo);
-            redirect('doctors/login');
+            if ($this->model->create($accountInfo)) {
+                redirect('doctors/login');
+            }
         } else {
             $this->render("/doctor/register", $data = []);
         }

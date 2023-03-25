@@ -1,13 +1,18 @@
 <?php
 class Pages extends Controller
 {
+    public function __construct()
+    {
+        $this->loadModel('Patient');
+    }
     public function index()
     {
         if (!isLoggedIn()) {
-            redirect('doctors/login');
+            redirect('locantion:index.php?url=doctors/login');
         } else {
             echo "Login success, redirecting......";
         }
+        echo "The Main Page";
     }
     public function about()
     {
