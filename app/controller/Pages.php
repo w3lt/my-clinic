@@ -9,5 +9,9 @@ class Pages extends Controller
             echo "Login success, redirecting......";
         }
     }
+    public function about()
+    {
+        $this->render('/Pages/about', $data = []);
+    }
 }
 ?>
