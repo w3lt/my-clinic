@@ -129,3 +129,13 @@ textarea[name="address"] {
 #waiting {
     color: azure;
 }
+
+.nav-bar-element {
+  display: inline-block;
+  border: solid 3px aqua;
+}
+
+.element-title {
+  text-decoration: none;
+  color: #617BFF;
+}
