@@ -54,8 +54,14 @@ class Patient
     }
     public function getPatients()
     {
-        $data = [];
-        return $data;
+        $sql = "SELECT * FROM " . $this->table;
+        try {
+            $this->db->query($sql);
+            return $this->db->resultSet();
+        } catch (Exception $exception) {
+            return false;
+        }
+        ;
     }
 }
 ?>

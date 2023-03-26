@@ -21,7 +21,7 @@ class Pages extends Controller
             ];
             $this->model->addPatient($data);
             */
-            var_dump($this->model->showPatient(2));
+            var_dump($this->model->getPatients());
         }
         $this->render('/Pages/index', $data = []);
     }
