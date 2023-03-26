@@ -54,7 +54,7 @@ class Patient
     }
     public function getPatients()
     {
-        $sql = "SELECT * FROM " . $this->table;
+        $sql = "SELECT * FROM " . $this->table . " WHERE doctor_id = " . $this->idDoctor;
         try {
             $this->db->query($sql);
             return $this->db->resultSet();

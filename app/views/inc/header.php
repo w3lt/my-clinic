@@ -9,7 +9,6 @@
 
 <body>
     <?php require APPROOT . '/views/inc/navbar.php'; ?>
-    <div class="container">Header</div>
 </body>
 
 </html>

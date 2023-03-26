@@ -15,3 +15,31 @@ function registerValidationForm() {
   alert("Register validate");
   return false;
 }
+
+function formOpen(id) {
+  document.getElementById(id).style.display = "block";
+  var popup = document.getElementById(id);
+
+  window.onclick = function (event) {
+    if (event.target == popup) {
+      popup.style.display = "none";
+    }
+  };
+}
+
+function formClose(id) {
+  document.getElementById(id).style.display = "none";
+}
+
+function check() {
+  if (
+    document.getElementById("register-password").value ==
+    document.getElementById("confirm-password").value
+  ) {
+    document.getElementById("message").style.color = "green";
+    document.getElementById("message").innerHTML = "matching passsword";
+  } else {
+    document.getElementById("message").style.color = "red";
+    document.getElementById("message").innerHTML = "not matching password";
+  }
+}

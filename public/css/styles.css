@@ -1,10 +1,9 @@
 html,
 body {
-  background-color: #211F2B;
+  background-color: #2c7588;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
 }
 
 h1,
@@ -39,29 +38,6 @@ form {
   background-color: #617BFF;
 }
 
-input,
-textarea {
-  position: relative;
-  text-align: center;
-  display: block;
-  margin: 0;
-  border-radius: 7px;
-  border: 2px white solid;
-  background-color: white;
-  padding: 10px 20px;
-  width: 100%;
-  color: #1E1C29;
-  margin-bottom: 20px;
-  box-sizing: border-box;
-  transition: all 0.2s;
-}
-
-input:focus,
-textarea:focus {
-  outline: none;
-  border: 2px #617BFF solid;
-}
-
 #background {
   position: fixed;
   top: 0;
@@ -71,7 +47,7 @@ textarea:focus {
   z-index: -1;
 }
 
-.container {
+/* .container {
   position: absolute;
   background-color: rgb(45, 59, 83);
   width: 300px;
@@ -80,7 +56,7 @@ textarea:focus {
   border-radius: 14px;
   padding: 30px 30px 20px 30px;
   margin-top: 50px;
-}
+} */
 
 input[name="amount"] {
   font-size: 20px;
@@ -138,4 +114,118 @@ textarea[name="address"] {
 .element-title {
   text-decoration: none;
   color: #617BFF;
+}
+
+
+/* Full-width input fields */
+input[type=text], input[type=password], input[type=email] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+.imgcontainer {
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
 }
