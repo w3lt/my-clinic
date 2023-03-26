@@ -23,7 +23,7 @@
 
       <div class="container">
         <label for="email"><b>Email</b></label>
-        <input id="email" type="email" placeholder="Example : doctor@hospital.com" name="email" required>
+        <input id="email" type="email" placeholder="doctor@hospital.com" name="email" required>
 
         <label for="password"><b>Password</b></label>
         <input id="login-password" type="password" placeholder="Password" name="password" required>

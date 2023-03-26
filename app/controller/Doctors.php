@@ -59,6 +59,12 @@ class Doctors extends Controller
         }
     }
 
+    public function logout()
+    {
+        session_destroy();
+        unset($_SESSION['doctor_id']);
+        redirect('doctors/login');
+    }
     function createDoctorSession($doctor)
     {
         $_SESSION['doctor_id'] = $doctor['id'];
