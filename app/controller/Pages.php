@@ -10,24 +10,30 @@ class Pages extends Controller
         if (!isLoggedIn()) {
             redirect('doctors/login');
         } else {
-
             $this->loadModel('Patient');
-            /*
-            $data = [
-            "name" => 'Khang',
-            "email" => 'khang@insa-cvl.fr',
-            "phone" => '0123456789',
-            "health_condition" => 'bi gay giai doan cuoi vo phuong cuu chua'
-            ];
-            $this->model->addPatient($data);
-            */
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                $patientInfo = [
+                    "name" => $_POST['name'],
+                    "email" => $_POST['email'],
+                    "phone" => $_POST['phone'],
+                    "health_condition" => $_POST['health_condition']
+                ];
+                $this->model->addPatient($patientInfo);
+            }
             $data = $this->model->getPatients();
         }
-        $this->render('/Pages/index', $data = []);
+        $this->render('/Pages/index', compact('data'));
     }
     public function about()
     {
         $this->render('/Pages/about', $data = []);
+    }
+    public function delete($id)
+    {
+        $this->loadModel('Patient');
+        if ($this->model->deletePatient($id)) {
+            redirect('/pages/index');
+        }
     }
 }
 ?>

@@ -27,6 +27,7 @@ class Patient
     }
     public function deletePatient($id)
     {
+        echo "Deleting....";
         $sql = "DELETE FROM " . $this->table . " WHERE id = " . $id;
         try {
             $this->db->query($sql);

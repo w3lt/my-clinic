@@ -50,7 +50,6 @@ class Doctors extends Controller
                 "specialist" => $_POST['specialist'],
                 "create_at" => getdate()
             ];
-            var_dump($accountInfo);
             if ($this->model->create($accountInfo)) {
                 redirect('doctors/login');
             }
