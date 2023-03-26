@@ -5,8 +5,8 @@
   <title>Login</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link type="text/css" rel="stylesheet" href=<?= ROOT . "/public/css/styles.css" ?> />
-  <script src="public/js/script.js"></script>
+  <link type="text/css" rel="stylesheet" href=<?= "/css/styles.css" ?> />
+  <script src="/js/script.js"></script>
 </head>
 
 <body>

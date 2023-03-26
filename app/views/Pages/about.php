@@ -2,7 +2,7 @@
 
 <head>
     <title>ABOUT US</title>
-    <link type="text/css" rel="stylesheet" href=<?= ROOT . "/public/css/styles.css" ?> />
+    <link type="text/css" rel="stylesheet" href=<?= "css/styles.css" ?> />
 </head>
 
 <body>

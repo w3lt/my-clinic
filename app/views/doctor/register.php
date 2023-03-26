@@ -5,7 +5,8 @@
     <title>Register</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link type="text/css" rel="stylesheet" href=<?= ROOT . "/public/css/styles.css" ?> />
+    <link type="text/css" rel="stylesheet" href=<?= "/css/styles.css" ?> />
+    <script src="js/script.js"></script>
 </head>
 
 <body>
@@ -42,7 +43,6 @@
         <input id="submit-btn" type="submit" value="Register" />
     </form>
     </div>
-    <script src="public/js/index.js"></script>
     <footer>Already have an account ? <a href='index.php?url=doctors/login'>Login</a></footer>
 </body>
 
