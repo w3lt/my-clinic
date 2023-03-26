@@ -8,7 +8,7 @@ class Pages extends Controller
     public function index()
     {
         if (!isLoggedIn()) {
-            redirect('locantion:index.php?url=doctors/login');
+            redirect('doctors/login');
         } else {
             $this->loadModel('Patient');
         }
