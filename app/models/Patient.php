@@ -8,7 +8,7 @@ class Patient
 
     public function __construct()
     {
-        $this->table = "Patient";
+        $this->table = "patient";
         $this->db = new Database();
         $this->db->getConnection();
         $this->idDoctor = $_SESSION['doctor_id'];
@@ -29,14 +29,17 @@ class Patient
     {
         return false;
     }
-    public function deletePatient($id){
+    public function deletePatient($id)
+    {
         return false;
     }
-    public function updatePatient($data){
+    public function updatePatient($data)
+    {
         return false;
     }
-    public function getPatients(){
-        $data = []
+    public function getPatients()
+    {
+        $data = [];
         return $data;
     }
 }

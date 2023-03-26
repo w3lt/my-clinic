@@ -3,6 +3,9 @@ class Doctors extends Controller
 {
     public function __construct()
     {
+        if (isLoggedIn()) {
+            redirect('pages/index');
+        }
         $this->loadModel('Doctor');
     }
     public function login()

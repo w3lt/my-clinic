@@ -3,16 +3,16 @@ class Pages extends Controller
 {
     public function __construct()
     {
-        $this->loadModel('Patient');
+        //$this->loadModel('Patient');
     }
     public function index()
     {
         if (!isLoggedIn()) {
             redirect('locantion:index.php?url=doctors/login');
         } else {
-            echo "Login success, redirecting......";
+            $this->loadModel('Patient');
         }
-        echo "The Main Page";
+        $this->render('/Pages/index', $data = []);
     }
     public function about()
     {
