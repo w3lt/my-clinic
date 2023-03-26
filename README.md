@@ -43,7 +43,7 @@ create_at date
 | doctor_id        | int(11)      | NO   | MUL | NULL    |                |
 | name             | varchar(255) | NO   |     | NULL    |                |
 | email            | varchar(255) | NO   |     | NULL    |                |
-| phone            | int(11)      | NO   |     | NULL    |                |
+| phone            | varchar(11)  | NO   |     | NULL    |                |
 | health_condition | text         | YES  |     | NULL    |                |
 +------------------+--------------+------+-----+---------+----------------+
 # IN MariaDB, create patient table :
@@ -53,7 +53,7 @@ id int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
 doctor_id int NOT NULL,
 name varchar(255) NOT NULL,
 email varchar(255) NOT NULL,
-phone int(11) NOT NULL,
+phone varchar(11) NOT NULL,
 health_condition text,
 FOREIGN KEY (doctor_id) REFERENCES doctor(id)
 );
