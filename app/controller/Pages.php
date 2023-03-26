@@ -10,7 +10,18 @@ class Pages extends Controller
         if (!isLoggedIn()) {
             redirect('doctors/login');
         } else {
+
             $this->loadModel('Patient');
+            /*
+            $data = [
+            "name" => 'Khang',
+            "email" => 'khang@insa-cvl.fr',
+            "phone" => '0123456789',
+            "health_condition" => 'bi gay giai doan cuoi vo phuong cuu chua'
+            ];
+            $this->model->addPatient($data);
+            */
+            var_dump($this->model->showPatient(2));
         }
         $this->render('/Pages/index', $data = []);
     }

@@ -15,7 +15,19 @@ class Patient
     }
     public function addPatient($data)
     {
-        $sql = "INSERT INTO " . $this->table . " (name, email, password, specialist, gender) VALUES ('" . $data['name'] . "', '" . $data['email'] . "', '" . $data['password'] . "', '" . $data['specialist'] . "', '" . $data['gender'] . "')";
+        $sql = "INSERT INTO " . $this->table . " (doctor_id, name, email, phone, health_condition) VALUES (" . $this->idDoctor . ",'" . $data['name'] . "', '" . $data['email'] . "', " . $data['phone'] . ", '" . $data['health_condition'] . "')";
+        try {
+            $this->db->query($sql);
+            $this->db->execute();
+            return true;
+        } catch (Exception $exception) {
+            return false;
+        }
+        ;
+    }
+    public function deletePatient($id)
+    {
+        $sql = "DELETE FROM " . $this->table . " WHERE id = " . $id;
         try {
             $this->db->query($sql);
             $this->db->execute();
@@ -27,11 +39,14 @@ class Patient
     }
     public function showPatient($id)
     {
-        return false;
-    }
-    public function deletePatient($id)
-    {
-        return false;
+        $sql = "SELECT * FROM " . $this->table . " WHERE id = " . $id;
+        try {
+            $this->db->query($sql);
+            return $this->db->single();
+        } catch (Exception $exception) {
+            return false;
+        }
+        ;
     }
     public function updatePatient($data)
     {
