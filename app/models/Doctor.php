@@ -12,7 +12,7 @@ class Doctor
     }
     public function create($data)
     {
-        $sql = "INSERT INTO " . $this->table . " (name, email, password, specialist, gender) VALUES ('" . $data['name'] . "', '" . $data['email'] . "', '" . $data['password'] . "', '" . $data['specialist'] . "', '" . $data['gender'] . "')";
+        $sql = "INSERT INTO " . $this->table . " (name, email, password, specialist, gender, create_at) VALUES ('" . $data['name'] . "', '" . $data['email'] . "', '" . $data['password'] . "', '" . $data['specialist'] . "', '" . $data['gender'] . "', CURRENT_DATE() )";
         try {
             $this->db->query($sql);
             $this->db->execute();

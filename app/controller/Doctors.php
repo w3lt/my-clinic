@@ -47,9 +47,10 @@ class Doctors extends Controller
                 "email" => $_POST['email'],
                 "password" => password_hash($_POST['password'], PASSWORD_DEFAULT),
                 "gender" => $_POST['gender'] == 'male',
-                "specialist" => $_POST['specialist']
+                "specialist" => $_POST['specialist'],
+                "create_at" => getdate()
             ];
-            echo "Signing up......";
+            var_dump($accountInfo);
             if ($this->model->create($accountInfo)) {
                 redirect('doctors/login');
             }
