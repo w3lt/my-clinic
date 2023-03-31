@@ -61,9 +61,3 @@ FOREIGN KEY (doctor_id) REFERENCES doctor(id)
 # TO Login
 
 First create an account with Register
-<<<<<<< HEAD
-
-Hleljaldsfjlasf
-=======
-HEllo my friends!
->>>>>>> af39505 (Chang README)
